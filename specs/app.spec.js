@@ -84,4 +84,5 @@ test('test error message due invalid value', () => {
   ];
   const discount = 'otus';
   expect(() => getTotal(items, discount)).toThrow('Скидка должна быть числом');
+  console.log('heh');
 });
