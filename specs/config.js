@@ -1,14 +1,15 @@
 module.exports = {
   baseUrl: 'https://bookstore.demoqa.com',
   user: {
-    userName: 'testnewapi',
-    password: 'Qazwsx123!',
+    userName: 'tratata',
+    password: 'Tratata1!',
   },
-  testUserID: '8858ff47-c90b-47ec-9c47-cfdf3118a366',
-  userForDelete: '01e840de-5995-42ee-8d27-c344a85dab45',
+  testUserID: '237c8015-96d5-4481-a087-508df706706f',
+  wrongTestID: '123',
+  userForDeleteID: 'fe79a8b1-7f4c-4972-ac13-00155fa38999',
   deleteUser: {
-    userName: 'qwe123',
-    password: '1Qqwe33333!',
+    userName: 'hihi11111',
+    password: 'ha111ha1!Q',
   }
 };
 
