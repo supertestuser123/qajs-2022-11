@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl: 'https://bookstore.demoqa.com',
+  baseUrl: 'https://api.restful-api.dev/objects', //поменял адрес т.к сваггер кажись сломался, по таймауту тесты отлетают(ставил больше 10000000 мс задержки) 
   user: {
     userName: 'tratata',
     password: 'Tratata1!',
@@ -10,7 +10,15 @@ module.exports = {
   deleteUser: {
     userName: 'hihi11111',
     password: 'ha111ha1!Q',
-  }
-};
+  }, 
+  deviceName: 'Super iPhone 2023',
+  idForUpdate: 'ff80818188422181018844dba8bb00a9',
+  inputName: 'Super Samsung 2024',
+  wrongID: 99999,
+  id1: 1,
+  id2: 2,
+  id3: 3
+ }
+
 
  
