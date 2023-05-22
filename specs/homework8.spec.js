@@ -3,13 +3,13 @@ import config from './config.js';
 import { expect } from '@jest/globals';
 
 describe('Homework 8 API Tests', () => {
-    test.skip('1 - Получение весь список объектов', async () => {
+    test('1 - Получение весь список объектов', async () => {
         const response = await getAllObjectsInfo();
         
         expect(typeof response).toBe('object')
     });
 
-    test.skip('2 - Получение определенный объект', async () => {
+    test('2 - Получение определенный объект', async () => {
         const response = await getSingleObjectsInfo(5);
         
         expect(response).toHaveProperty('id')
@@ -18,14 +18,14 @@ describe('Homework 8 API Tests', () => {
      
     });
 
-    test.skip('3 - Получение несуществующего объека', async () => {
+    test('3 - Получение несуществующего объека', async () => {
         const id = 999
         const response = await getSingleObjectsInfo(id);
         
         expect(response.error).toBe('Oject with id='+id+' was not found.')
     });
 
-    test.skip('4 - Добавление данных', async () => {
+    test('4 - Добавление данных', async () => {
         const response = await addObject(config.deviceName);
         
         expect(response).toHaveProperty('createdAt')
@@ -34,14 +34,14 @@ describe('Homework 8 API Tests', () => {
 
     });
 
-    test.skip('5 - Обновление данных', async () => {
+    test('5 - Обновление данных', async () => {
         const response = await editObject(config.inputName);
         
         expect(response.name).toBe(config.inputName)
         expect(response).toHaveProperty('updatedAt')
     });
 
-    test.skip('6 - Обновление данных c ошибочным URL', async () => {
+    test('6 - Обновление данных c ошибочным URL', async () => {
         const response = await editObjectWrongURL(config.inputName);
         
         expect(response.status).toBe(405)
@@ -50,21 +50,21 @@ describe('Homework 8 API Tests', () => {
         expect(response).toHaveProperty('timestamp')
     });
 
-    test.skip('7 - Обновление данных не найденным ID', async () => {
+    test('7 - Обновление данных не найденным ID', async () => {
         const response = await editObjectNotFound(config.wrongID);
         
         expect(response).toHaveProperty('error')
         expect(response.error).toBe("The Object with id = "+ config.wrongID + " doesn't exist. Please provide an object id which exists or generate a new Object using POST request and capture the id of it to use it as part of PATCH request after that.")
     });
     
-    test.skip('8 - Обновление данных без тела запроса', async () => {
+    test('8 - Обновление данных без тела запроса', async () => {
         const response = await editObjectNoBody();
         
         expect(response).toHaveProperty('error')
         expect(response.error).toBe('400 Bad Request. If you are trying to create or update the data, potential issue is that you are sending incorrect body json or it is missing at all.')
     });
 
-    test.skip('9 - Получение списка нескольких объектов', async () => {
+    test('9 - Получение списка нескольких объектов', async () => {
         const response = await getListObjectsByIds();
         
         response.forEach((data) => {
