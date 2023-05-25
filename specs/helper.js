@@ -86,7 +86,7 @@ const addObject = async(name) => {
 }
 
 const editObject = async(name) => {
-  const response = await fetch(`${config.baseUrl}/${config.idForUpdate}`, {
+  const response = await fetch(`${config.baseUrl}/${name}`, {
     method: 'PATCH',
     body: JSON.stringify({ name: name }),
     headers: { 'Content-Type': 'application/json' },
@@ -106,7 +106,7 @@ const editObjectWrongURL = async(name) => {
 }
 
 const editObjectNotFound = async(name) => {
-  const response = await fetch(`${config.baseUrl}/${config.wrongID}`, {
+  const response = await fetch(`${config.baseUrl}/${name}`, {
     method: 'PATCH',
     body: JSON.stringify({ name: name }),
     headers: { 'Content-Type': 'application/json' },
@@ -125,10 +125,11 @@ const editObjectNoBody = async() => {
   return data
 }
 
-const getListObjectsByIds = async() => {
-  const response = await fetch(`${config.baseUrl}?id=${config.id1}&id=${config.id2}&id=${config.wrongID}`, {
+const getListObjectsByIds = async(ids) => {
+    const response = await fetch(`${config.baseUrl}?id=${ids.join('&id=')}`, {
     method: 'GET',
   });
+  
   const data = await response.json();
   return data
 }

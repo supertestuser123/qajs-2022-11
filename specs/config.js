@@ -11,13 +11,7 @@ module.exports = {
     userName: 'hihi11111',
     password: 'ha111ha1!Q',
   }, 
-  deviceName: 'Super iPhone 2023',
   idForUpdate: 'ff80818188422181018844dba8bb00a9',
-  inputName: 'Super Samsung 2024',
-  wrongID: 99999,
-  id1: 1,
-  id2: 2,
-  id3: 3
  }
 
 
