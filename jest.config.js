@@ -1,6 +1,6 @@
 
 export default {
-  testMatch: ['**/src/index.spec.js'],
+  testMatch: ['**/src/homework8.spec.js'],
   "transform": {
     "^.+\\.[t|j]sx?$": "babel-jest"
   },
