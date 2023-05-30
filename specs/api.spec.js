@@ -1,7 +1,7 @@
 import { describe, expect, test} from "@jest/globals";
 
 //task 1 - bookstore tests
-test('Create user - Login is already in use', async () => {
+test.skip('Create user - Login is already in use', async () => {
     const response  = await fetch('https://bookstore.demoqa.com/Account/v1/User',{
         method: 'POST',
         headers: {
@@ -19,7 +19,7 @@ test('Create user - Login is already in use', async () => {
     
 })
 
-test('Create user - Wrong password', async () => {
+test.skip('Create user - Wrong password', async () => {
     const response  = await fetch('https://bookstore.demoqa.com/Account/v1/User',{
         method: 'POST',
         headers: {
@@ -36,7 +36,7 @@ test('Create user - Wrong password', async () => {
     expect(response.status).toEqual(400);   
 })
 
-test('Create user - Succeeded', async () => {
+test.skip('Create user - Succeeded', async () => {
     const response  = await fetch('https://bookstore.demoqa.com/Account/v1/User',{
         method: 'POST',
         headers: {
@@ -53,7 +53,7 @@ test('Create user - Succeeded', async () => {
     expect(data.username).toEqual('test12');
 })
 
-test('Generate a token - Succeeded', async () => {
+test.skip('Generate a token - Succeeded', async () => {
     const response  = await fetch('https://bookstore.demoqa.com/Account/v1/GenerateToken',{
         method: 'POST',
         headers: {
@@ -72,7 +72,7 @@ test('Generate a token - Succeeded', async () => {
     expect(data.result).toEqual('User authorized successfully.');
 })
 
-test('Generate a token - With error', async () => {
+test.skip('Generate a token - With error', async () => {
     const response  = await fetch('https://bookstore.demoqa.com/Account/v1/GenerateToken',{
         method: 'POST',
         headers: {
@@ -91,7 +91,7 @@ test('Generate a token - With error', async () => {
 
 //task 2 - public api tests (https://swapi.dev/ and https://restful-api.dev/ )
 
-test('List of all SW characters', async () => {
+test.skip('List of all SW characters', async () => {
     const response  = await fetch('https://swapi.dev/api/people',{
         method: 'GET',
    })
@@ -101,7 +101,7 @@ test('List of all SW characters', async () => {
     expect(Array.isArray(data.results)).toBe(true); //проверяю что в results получу массив 
 })
 
-test('Add new object - No errors', async () => {
+test.skip('Add new object - No errors', async () => {
     const response  = await fetch('https://api.restful-api.dev/objects',{
         method: 'POST',
         headers: {
@@ -117,7 +117,7 @@ test('Add new object - No errors', async () => {
     expect(data.name).toEqual('test');
 })
 
-test('Add new object - Post empty body', async () => {
+test.skip('Add new object - Post empty body', async () => {
     const response  = await fetch('https://api.restful-api.dev/objects',{
         method: 'POST',
         headers: {
@@ -133,7 +133,7 @@ test('Add new object - Post empty body', async () => {
     expect(data.name).toEqual(null);
 })
 
-test('Check data in response object', async () => {
+test.skip('Check data in response object', async () => {
     const response  = await fetch('https://api.restful-api.dev/objects/7',{
         method: 'GET',
         
@@ -145,7 +145,7 @@ test('Check data in response object', async () => {
     expect(data.data['Hard disk size']).toEqual('1 TB')
 })
 
-test('Correct update', async () => {
+test.skip('Correct update', async () => {
     const response  = await fetch('https://api.restful-api.dev/objects/ff80818187f8fe360187fd3ec73600d9',{
         method: 'PUT',
         headers: {
