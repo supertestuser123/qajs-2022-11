@@ -54,7 +54,7 @@ jobs:
       with:
         folder: jest-html-report
         clean: true
-        token: ${{ secrets.MY_TOKEN }
+        token: ${{ secrets.MY_TOKEN }}
         
         
         
